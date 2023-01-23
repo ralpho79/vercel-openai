@@ -11,9 +11,10 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 def index():
     if request.method == "POST":
         category = request.form["category"]
+        number = request.form["number"]
         response = openai.Completion.create(
             model="text-davinci-003",
-            prompt=generate_prompt(category),
+            prompt=generate_prompt(number, category),
             temperature=0.5,
             max_tokens=60,
             top_p=1,
@@ -26,7 +27,7 @@ def index():
     return render_template("index.html", result=result)
 
 
-def generate_prompt(category):
-    return """Recommend the best 3 {} movies to watch:""".format(
+def generate_prompt(number, category):
+    return """Recommend the best {} {} movies to watch:""".format(number,
         category.capitalize()
     )
