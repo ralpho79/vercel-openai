@@ -17,6 +17,8 @@
     <input type="submit" value="Generate titles" />
   </form>
   {% if result %}
-  <div class="result">{{ result | safe }}</div>
+  <div class="result">
+    <pre>{{ result | safe }}</pre>
+  </div>
   {% endif %}
 </body>
