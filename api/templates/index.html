@@ -17,6 +17,6 @@
     <input type="submit" value="Generate titles" />
   </form>
   {% if result %}
-  <div class="result">{{ result }}</div>
+  <div class="result">{{ isString(result) }} {{ result }}</div>
   {% endif %}
 </body>

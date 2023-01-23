@@ -1,6 +1,4 @@
-import os
-
-import openai
+import os, openai
 from flask import Flask, redirect, render_template, request, url_for
 
 app = Flask(__name__)
@@ -21,6 +19,7 @@ def index():
             frequency_penalty=0,
             presence_penalty=0
         )
+
         return redirect(url_for("index", result=response.choices[0].text))
 
     result = request.args.get("result")
