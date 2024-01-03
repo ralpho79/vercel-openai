@@ -11,7 +11,7 @@ def index():
         category = request.form["category"]
         number = request.form["number"]
         response = openai.Completion.create(
-            model="text-davinci-003",
+            model="gpt-3.5-turbo-instruct",
             prompt=generate_prompt(number, category),
             temperature=0.5,
             max_tokens=60,
