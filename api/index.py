@@ -14,7 +14,7 @@ def index():
             model="gpt-3.5-turbo-instruct",
             prompt=generate_prompt(number, category),
             temperature=0.5,
-            max_tokens=60,
+            max_tokens=300,
             top_p=1,
             frequency_penalty=0,
             presence_penalty=0
